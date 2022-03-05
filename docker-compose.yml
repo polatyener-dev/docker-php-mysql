@@ -1,0 +1,35 @@
+version: '3.7'
+#php 7.4 nginx
+
+services:
+  #php services
+  php_7_4:
+    image: php:7.4-fpm
+    container_name: php_7_4
+    tty: true
+    working_dir: /var/www
+    volumes:
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./project/:/var/www
+    networks:
+      - local-bridge
+
+  #nginx service
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    tty: true
+    volumes:
+      - ./project/:/var/www
+      - ./nginx/conf.d:/etc/nginx/conf.d/
+    ports:
+      - 80:80
+    networks:
+      - local-bridge
+
+networks:
+  local-bridge:
+    driver: bridge
+
+      
+
