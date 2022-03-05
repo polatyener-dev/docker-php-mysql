@@ -1,7 +1,7 @@
 # docker-php-mysql
-mysql and php setup in docker
+<p>mysql and php setup in docker</p>
 
-Run this command for get docker containers:
+<p>Run this command for get docker containers:</p>
 
-sh run.sh
+<code>sh run.sh</code>
 
