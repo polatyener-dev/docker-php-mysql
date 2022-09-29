@@ -3,5 +3,7 @@
 
 <p>Run this command for get docker containers:</p>
 
-<code>sh run.sh</code>
+```
+sh run.sh
+```
 
